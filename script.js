@@ -1,15 +1,16 @@
 (() => {
   const root = document.documentElement;
-  const manual = localStorage.getItem('octascene-theme');
-  const hour = new Date().getHours();
-  const automatic = hour >= 7 && hour < 19 ? 'light' : 'dark';
-  root.dataset.theme = manual || automatic;
 
-  document.querySelector('.theme-toggle')?.addEventListener('click', () => {
-    const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
-    root.dataset.theme = next;
-    localStorage.setItem('octascene-theme', next);
-  });
+  // OctaScene landing pages use the cinematic dark visual system at all times.
+  // Clear the previous time-based/light preference so returning visitors also
+  // receive the intended dark background immediately.
+  root.dataset.theme = 'dark';
+  localStorage.removeItem('octascene-theme');
+
+  const themeToggle = document.querySelector('.theme-toggle');
+  if (themeToggle) {
+    themeToggle.style.display = 'none';
+  }
 
   document.querySelectorAll('.filter').forEach(btn => {
     btn.addEventListener('click', () => {
