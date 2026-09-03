@@ -1,23 +1,24 @@
 # OctaScene Provider & Model Candidate List (PMList)
 
 > ## AI maintenance instructions
-> This file is the canonical **Candidate List** for AI media providers, API platforms, and generative media models being evaluated for OctaScene.
+> This file is the canonical **Candidate List** for AI media providers, API platforms, generative media models, and AI direction/video-understanding models being evaluated for OctaScene.
 >
-> Whenever a user asks to **add a provider, platform, API, or model to the Candidate List / PMList**, the AI must update this file rather than creating a separate list.
+> Whenever a user asks to **add a provider, platform, API, model, director model, or video-understanding model to the Candidate List / PMList**, the AI must update this file rather than creating a separate list.
 >
 > Maintenance rules:
 > 1. **Deduplicate first.** If the provider/model already exists, update its row instead of adding another row.
 > 2. **Research before populating free-tier fields** when current information is available. Prefer official pricing/docs. Free offers change frequently.
 > 3. Every provider row must include: **Name, Category, Capabilities, Free Quota, Free Credit, Free Calls, One-Time Promo, Recurring Quota, Notes**.
-> 4. Every model row must include: **Name, Model Owner/Origin, Category, Capabilities, Known Candidate Providers, Free/Open Notes**.
-> 5. If a field is unavailable, unverified, not applicable, or no offer exists, write **`-`**. Never leave cells blank.
-> 6. Clearly distinguish **recurring free quota** from **one-time signup/trial credit**.
-> 7. Do not treat a rate limit (for example, requests/minute) as generation credit unless the provider explicitly includes free generation allowance.
-> 8. Keep **provider/platform records separate from model records**. One model may be available from many providers; one provider may expose many models.
-> 9. Update capability tags when known: **T2I** (text-to-image), **I2I** (image-to-image/edit), **I2V** (image-to-video), **T2V** (text-to-video), **Render** (non-generative renderer), **Inference** (general model inference).
-> 10. Preserve the numbered `#` column and renumber rows sequentially after structural edits.
-> 11. Add short source/verification notes in **Notes** when useful, especially for free-tier terms.
-> 12. The purpose of this list is **candidate evaluation**, not a guarantee that a provider is production-ready or currently enabled in OctaScene.
+> 4. Every generation model row must include: **Name, Model Owner/Origin, Category, Capabilities, Known Candidate Providers, Free/Open Notes**.
+> 5. Every direction/reasoning/video-understanding row must include: **Name, Owner, Primary Role, Inputs, OctaScene Uses, Strengths, Notes**.
+> 6. If a field is unavailable, unverified, not applicable, or no offer exists, write **`-`**. Never leave cells blank.
+> 7. Clearly distinguish **recurring free quota** from **one-time signup/trial credit**.
+> 8. Do not treat a rate limit (for example, requests/minute) as generation credit unless the provider explicitly includes free generation allowance.
+> 9. Keep **provider/platform records separate from generation-model records and direction/reasoning records**. One model may be available from many providers; one provider may expose many models.
+> 10. Update capability tags when known: **T2I** (text-to-image), **I2I** (image-to-image/edit), **I2V** (image-to-video), **T2V** (text-to-video), **Render** (non-generative renderer), **Inference** (general model inference).
+> 11. Preserve the numbered `#` column and renumber rows sequentially after structural edits.
+> 12. Add short source/verification notes in **Notes** when useful, especially for free-tier terms.
+> 13. The purpose of this list is **candidate evaluation**, not a guarantee that a provider or model is production-ready or currently enabled in OctaScene.
 >
 > ### Free-tier field definitions
 > - **Free Quota**: Generic free usage allowance when the provider states one but uses a unit other than calls/credits, or when the exact unit varies.
@@ -121,3 +122,104 @@
 > | 24 | Veo 3.1 | Google / USA | Video model | I2V, T2V | Supported Google/aggregator routes | Premium Veo candidate; verify availability/pricing. |
 > | 25 | LTX-Video | Lightricks / Israel | Video model | I2V, T2V | Hugging Face, Replicate, fal.ai and open-model hosts | Open-model ecosystem makes this relevant for low-cost/free inference. |
 > | 26 | HunyuanVideo | Tencent / China | Video model | I2V, T2V | Hugging Face and open-model hosts | Open model; useful for self-hosted or free-provider evaluation. |
+> | 27 | CogVideoX-5B | Zhipu AI / China | Video model | I2V, T2V | Hugging Face and open-model hosts | Open model; suitable for low-cost/free inference experiments. |
+> | 28 | Mochi 1 | Genmo / USA | Video model | T2V | Hugging Face and open-model hosts | Open model; useful benchmark/candidate for free infrastructure. |
+> | 29 | PixVerse 6 | PixVerse / China | Video model | I2V, T2V | PixVerse and supported aggregators | Commercial video model; verify current version/API host availability. |
+> | 30 | Pruna p-video | Pruna AI / Europe | Video model | I2V, T2V | Open/inference hosts where supported | Speed/efficiency-oriented candidate; verify canonical versions/hosts. |
+> | 31 | Luma / Dream Machine models | Luma AI / USA | Video model family | I2V, T2V | Luma AI, Supermodel and supported aggregators | Commercial model family. |
+> | 32 | Pika models | Pika / USA | Video model family | I2V, T2V | Pika and supported aggregators | Commercial model family. |
+> | 33 | Stable Video | Stability AI / UK/global | Video model family | I2V | Hugging Face/open hosts, Supermodel and others | Open/open-weight variants may allow low-cost inference. |
+> | 34 | Sora | OpenAI / USA | Video model family | I2V, T2V | OpenAI and supported aggregators where legitimately available | Premium/commercial; verify official API availability and third-party legitimacy before production integration. |
+>
+> ---
+>
+> ## Direction / Reasoning / Video Understanding Candidates
+>
+> These models and services are candidates for OctaScene's **AI Director layer**. They do not need to generate the final media themselves. Their role is to understand the project, narration, script, references, visual continuity, pacing, story function, and production constraints, then plan or critique shots and route work to the appropriate generation/search/rendering tools.
+>
+> | # | Name | Owner | Primary Role | Inputs | OctaScene Uses | Strengths | Notes |
+> |---:|---|---|---|---|---|---|---|
+> | 1 | GPT-5.6 Sol | OpenAI | Master Director / planning reasoning | Script, narration transcript/timing, images, project metadata, Direction Bible, reference-analysis output | Narrative analysis, shot planning, visual strategy, model/tool routing, continuity decisions, Direction Bible, shot-spec generation, regeneration decisions | Strong complex reasoning, structured planning, large-context project reasoning | Candidate primary Master Director. Keep generation-provider selection separate from the director model. |
+> | 2 | Claude Opus 5 | Anthropic | Creative Director / long-form story reasoning | Script, narration, project documents, extracted reference frames/analysis | Theme, emotional arc, narrative structure, direction rules, shot grammar, long-form creative critique | Strong long-form writing/reasoning and creative structure | Candidate alternative/ensemble Master Director; native video-analysis workflow may require preprocessing/extracted frames. |
+> | 3 | Claude Sonnet 5 | Anthropic | Cost-efficient Director / planner | Script, narration, project metadata, extracted visual context | High-volume shot planning, revisions, Direction Bible application, production assistance | Cost/speed-oriented alternative to Opus-class reasoning | Candidate everyday director where full Opus reasoning is unnecessary. |
+> | 4 | Gemini long-context video models | Google | Reference Video Analyzer / Shot Critic | Native video, audio, transcript, images, text | Analyze reference films/channels, pacing, cut rhythm, shot types, camera movement, visual-to-narration relationship, generated-video QA | Native multimodal/video understanding and long-context analysis | High-priority reference-video analyzer. Track current production model/version separately because Gemini model names change frequently. |
+> | 5 | Qwen3-VL Thinking | Alibaba / Qwen | Low-cost multimodal Director / Shot Critic | Video, images, text, script, project metadata | Video/image understanding, visual QA, spatial reasoning, continuity checking, batch shot scoring | Strong multimodal reasoning with open/hosted ecosystem options | Attractive for high-volume/low-cost critique and secondary director tasks. Verify exact checkpoint/provider before integration. |
+> | 6 | TwelveLabs Pegasus | TwelveLabs | Specialized video understanding / segmentation | Video + audio + prompts | Timestamped scene analysis, custom segment detection, editorial grammar extraction, reference-profile construction | Purpose-built video understanding and configurable segment analysis | Strong candidate for extracting shot grammar from reference videos rather than serving as the master reasoning model. |
+> | 7 | TwelveLabs Marengo | TwelveLabs | Multimodal retrieval / reference search | Video, audio, images, text/documents | Semantic shot/reference retrieval, finding visual analogues, building searchable reference libraries, concept-to-footage matching | Multimodal embeddings/search specialized for video retrieval | Useful future layer for a large direction/reference library and archive search. |
+> | 8 | LTX Studio / LTX ecosystem | Lightricks | Product/workflow reference + previsualization | Concept, script, storyboard inputs | Benchmark script-to-storyboard, shot framing, camera direction, character consistency and timeline workflow | Closest current product reference to parts of OctaScene's AI-directing workflow | Treat primarily as competitor/workflow reference; LTX-Video remains separately listed as a generation model. |
+>
+> ### Proposed AI Director responsibilities
+>
+> The OctaScene Director should reason over more than prompts. Candidate responsibilities include:
+>
+> - script and narration understanding
+> - project/video category and audience intent
+> - narrative beat/function classification
+> - emotional arc and information-density planning
+> - shot purpose and shot-type selection
+> - visual novelty and repetition avoidance
+> - camera framing, angle, movement and composition
+> - narration-to-visual relationship
+> - maps, archive, document, graphics and generated-media routing
+> - character/location/era continuity
+> - reference-video grammar extraction
+> - Direction Bible creation and enforcement
+> - duration, pacing and pattern-interrupt planning
+> - preferred generation capability selection before choosing a provider/model
+> - generated-shot critique and regeneration decisions
+> - timeline-level coverage/gap analysis
+>
+> ### Candidate narrative-function taxonomy
+>
+> Each narration/scene block can be classified into a narrative function so visual direction follows meaning rather than only keywords:
+>
+> `HOOK`, `SETUP`, `CONTEXT`, `QUESTION`, `REVEAL`, `EVIDENCE`, `EXPLANATION`, `PROCESS`, `ESCALATION`, `CONTRAST`, `CONSEQUENCE`, `EMOTIONAL_BEAT`, `TRANSITION`, `RESOLUTION`, `CALLBACK`.
+>
+> Example routing logic:
+>
+> - **EVIDENCE** → prefer archive, documents, maps, photographs, newspapers, diagrams or factual graphics when available.
+> - **EMOTIONAL_BEAT** → prefer restrained composition, longer duration, lower information density and slower movement.
+> - **EXPLANATION / PROCESS** → prefer diagrams, maps, staged visual sequences and process shots.
+> - **TRANSITION** → prefer establishing shots, geography, passage-of-time visuals or environmental B-roll.
+>
+> ### Direction Profile / reference-video analysis targets
+>
+> Reference-video analysis should be able to produce reusable **Direction Profiles** containing metrics/rules such as:
+>
+> - average and median shot duration
+> - cuts per minute
+> - shot-type distribution
+> - archive/document/map/graphics/reconstruction/B-roll percentages
+> - wide/medium/close framing distribution
+> - static vs moving-camera distribution
+> - push-in/pan/handheld/other camera movement frequency
+> - pattern-interrupt interval
+> - major visual-transition interval
+> - hook duration and chapter structure
+> - music/sound intensity by narrative function
+> - narration-to-visual relationship
+> - repeated visual motifs
+> - reveal and escalation grammar
+>
+> OctaScene should learn **production grammar rather than copy individual visuals**.
+>
+> ---
+>
+> ## Capability Categories
+>
+> | # | Code | Category | Meaning |
+> |---:|---|---|---|
+> | 1 | T2I | Text-to-Image | Generate a still image from a text prompt. |
+> | 2 | I2I | Image-to-Image / Image Editing | Transform, edit, restyle, extend, or condition generation on an input image. |
+> | 3 | I2V | Image-to-Video | Generate video using one or more input images/frames. |
+> | 4 | T2V | Text-to-Video | Generate video directly from a text prompt. |
+> | 5 | Render | Video / Storyboard Rendering | Assemble/render media without necessarily performing generative image/video synthesis. |
+> | 6 | Inference | General Model Inference | Host/run models through a general inference API or serverless runtime. |
+>
+> ---
+>
+> ## OctaScene usage intent
+>
+> PMList is a **research and integration candidate registry**. OctaScene should keep providers, generation models, and direction/reasoning models as distinct concepts. Providers and generation models should use a many-to-many provider-model capability mapping. The Director layer should reason about the project and first select the required **capability and creative intent**, then allow the model/provider selection layer to rank compatible connected options by quality, speed, cost, free-tier availability, continuity requirements and shot constraints.
+
+The Director should be able to choose non-generation routes as well. For example, if a shot is factual evidence, it may route to archive/document/map retrieval rather than creating synthetic B-roll.
