@@ -41,8 +41,8 @@
 > | 7 | Replicate | Model hosting / inference platform | T2I, I2I, I2V, T2V, Inference | Select models may allow limited free testing | - | - | Model-dependent | - | Broad model ecosystem; free availability is model/account dependent. |
 > | 8 | fal.ai | Model inference API platform | T2I, I2I, I2V, T2V, Inference | - | - | - | - | - | Major low-latency generative-media inference provider. |
 > | 9 | PiAPI | Multi-model API aggregator | T2I, I2I, I2V, T2V | - | $0.50 signup credit (verify) | - | $0.50 signup credit (verify) | - | Affordable aggregator candidate. |
-> | 10 | Kie.ai | Multi-model API aggregator | T2I, I2I, I2V, T2V | - | 80 testing credits (verify) | - | 80 testing credits (verify) | - | Broad commercial model selection. |
-> | 11 | WaveSpeedAI | Multi-model generation API | T2I, I2I, I2V, T2V | - | Up to $1 conditional trial credit (verify eligibility) | - | Conditional signup trial | - | Record as conditional trial rather than guaranteed free tier. |
+> | 10 | Kie.ai | Multi-model API aggregator | T2I, I2I, I2V, T2V | - | 80 testing credits (verified Sep 2026) | - | 80 signup/testing credits | - | French-localized site available; broad commercial model selection including Seedance, Kling, Veo and major image models. |
+> | 11 | WaveSpeedAI | Multi-model generation API | T2I, I2I, I2V, T2V | - | $1 signup credit (verified Sep 2026) | - | $1 signup credit / no card reported | - | Strong low-cost candidate after trial; Wan 2.2 Ultra Fast advertised around $0.01/sec at verification. |
 > | 12 | DeepInfra | Model inference platform | T2I, T2V, Inference | - | - | - | - | - | Affordable open-model hosting/API candidate. |
 > | 13 | OpenRouter Video | Model routing / aggregation | T2V, I2V | - | - | - | - | - | Video-routing/API candidate; verify current supported media models. |
 > | 14 | Together AI | Model inference platform | T2I, Inference | - | - | - | - | - | General inference candidate with generative image support. |
@@ -85,6 +85,9 @@
 > | 51 | PPIO | Multi-model inference/generation API | T2I, I2I, I2V, T2V, Inference | Free trial advertised; exact media allowance varies | Trial credits / amount verify | - | Yes / trial | - | Very low-cost Chinese inference aggregator; useful fallback for Wan, Kling, Hailuo, Qwen and Seedream routes. |
 > | 52 | AI Ping | Multi-model Chinese API aggregator | T2I, I2I, I2V, T2V | - | ¥6 signup credit (verify current offer) | - | ¥6 signup credit | - | Aggregator candidate with Vidu, MiniMax/Hailuo, Seedream and other media models. |
 > | 53 | Baidu Qianfan Platform / 千帆大模型平台 | First-party model marketplace/API | T2I, I2I, I2V, T2V, Inference | Media-generation free quota unverified | - | - | New-user model offers vary | - | Supports Baidu and third-party models; do not assume "free model" filters imply free media generation. |
+> | 54 | OVHcloud AI Endpoints | French cloud / hosted inference API | T2I, Inference | Stable Diffusion XL endpoint listed free at Sep 2026 verification | - | - | - | Free hosted SDXL endpoint while current catalog pricing remains free | French provider with French docs; OpenAI-compatible image-generation route. High-priority recurring/free storyboard-image candidate. |
+> | 55 | Novita AI | Multi-model generation / inference API | T2I, I2I, I2V, T2V, Inference | Sandbox program | $100 sandbox credits (verified Sep 2026) | - | $100 / 90-day sandbox; no card reported | - | French-localized site/docs; 200+ serverless models and strong full-workflow testing candidate across image and video. |
+> | 56 | ModelsLab | Multi-model media generation API | T2I, I2I, I2V, T2V | - | Free signup credits; exact amount varies/verify | - | Signup testing credits | - | Broad media API catalog including Wan, Kling and Seedance families; useful low-cost I2V/T2V fallback candidate. |
 >
 > ---
 >
@@ -103,45 +106,18 @@
 > | 9 | GPT Image | OpenAI / USA | Image model | T2I, I2I | Direct/OpenAI-compatible or aggregator routes where available | Paid model generally; aggregator free credits may offset testing cost. |
 > | 10 | Qwen Image | Alibaba / China | Image model | T2I, I2I | Hugging Face/open-model hosts, aggregators | Open-model availability may enable low-cost/self-hosted routes. |
 > | 11 | Krea Image models | Krea / global | Image model | T2I, I2I | Krea and supported aggregators | Verify exact model/version and API terms when adding production mapping. |
-> | 12 | Wan 2.x | Alibaba / China | Video model family | I2V, T2V | Hugging Face, Doitong, fal.ai, Replicate, Runware, others | Open-model family; strong candidate for free/self-hosted/low-cost routing. |
-> | 13 | Wan 2.2 A14B | Alibaba / China | Video model | I2V, T2V | Hugging Face/open hosts, fal.ai, Replicate, Runware, others | Open-model route candidate; verify exact host capabilities. |
+> | 12 | Wan 2.x | Alibaba / China | Video model family | I2V, T2V | Hugging Face, Doitong, fal.ai, Replicate, Runware, ModelsLab, others | Open-model family; strong candidate for free/self-hosted/low-cost routing. |
+> | 13 | Wan 2.2 A14B | Alibaba / China | Video model | I2V, T2V | Hugging Face/open hosts, fal.ai, Replicate, Runware, ModelsLab, others | Open-model route candidate; verify exact host capabilities. |
 > | 14 | Wan 2.6 | Alibaba / China | Video model | I2V, T2V | Third-party aggregators / hosts | Verify canonical release and provider support before production use. |
 > | 15 | Wan 2.7 | Alibaba / China | Video model | I2V, T2V | Third-party aggregators / hosts | Verify canonical release and provider support before production use. |
 > | 16 | Wan 3.0 | Alibaba / China | Video model | I2V, T2V | Third-party aggregators / hosts | Candidate/version name requires verification before production mapping. |
 > | 17 | FastWan QAD 1.3B 480p | FastWan / open ecosystem | Video model | I2V, T2V | Open-model hosts / candidate inference platforms | Lightweight/speed-oriented Wan derivative; verify exact API hosts. |
 > | 18 | FastWan 2.2 720p | FastWan / open ecosystem | Video model | I2V, T2V | Open-model hosts / candidate inference platforms | Speed-oriented Wan derivative; verify exact model identifier/host support. |
-> | 19 | Kling | Kuaishou / China | Video model family | I2V, T2V | Kling AI, KlingAPI.com, Kie.ai, PiAPI, Doitong, Renderful, Runbase, EvoLink.AI, others | Commercial model; aggregator signup credits may provide free testing. |
-> | 20 | Seedance | ByteDance / China | Video model family | I2V, T2V | Kie.ai, Doitong, Renderful, Runbase, EvoLink.AI, Emix.ai, others | Commercial/hosted model; free testing depends on provider. |
+> | 19 | Kling | Kuaishou / China | Video model family | I2V, T2V | Kling AI, KlingAPI.com, Kie.ai, PiAPI, Doitong, Renderful, Runbase, EvoLink.AI, ModelsLab, others | Commercial model; aggregator signup credits may provide free testing. |
+> | 20 | Seedance | ByteDance / China | Video model family | I2V, T2V | Kie.ai, Doitong, Renderful, Runbase, EvoLink.AI, Emix.ai, ModelsLab, others | Commercial/hosted model; free testing depends on provider. |
 > | 21 | Hailuo / MiniMax Video | MiniMax / China | Video model family | I2V, T2V | MiniMax/Hailuo, Doitong, Renderful, Runbase, Supermodel, others | Commercial model; provider credits may allow free tests. |
 > | 22 | Veo | Google / USA | Video model family | I2V, T2V | Google routes and supported aggregators such as Kie.ai, Doitong, Renderful, Runbase, EvoLink.AI, Topview | Premium commercial model; free access generally provider/promo dependent. |
 > | 23 | Veo 3.1 Fast | Google / USA | Video model | I2V, T2V | Supported Google/aggregator routes | Faster/lower-cost Veo candidate where available; verify API/version naming. |
 > | 24 | Veo 3.1 | Google / USA | Video model | I2V, T2V | Supported Google/aggregator routes | Premium Veo candidate; verify availability/pricing. |
 > | 25 | LTX-Video | Lightricks / Israel | Video model | I2V, T2V | Hugging Face, Replicate, fal.ai and open-model hosts | Open-model ecosystem makes this relevant for low-cost/free inference. |
 > | 26 | HunyuanVideo | Tencent / China | Video model | I2V, T2V | Hugging Face and open-model hosts | Open model; useful for self-hosted or free-provider evaluation. |
-> | 27 | CogVideoX-5B | Zhipu AI / China | Video model | I2V, T2V | Hugging Face and open-model hosts | Open model; suitable for low-cost/free inference experiments. |
-> | 28 | Mochi 1 | Genmo / USA | Video model | T2V | Hugging Face and open-model hosts | Open model; useful benchmark/candidate for free infrastructure. |
-> | 29 | PixVerse 6 | PixVerse / China | Video model | I2V, T2V | PixVerse and supported aggregators | Commercial video model; verify current version/API host availability. |
-> | 30 | Pruna p-video | Pruna AI / Europe | Video model | I2V, T2V | Open/inference hosts where supported | Speed/efficiency-oriented candidate; verify canonical versions/hosts. |
-> | 31 | Luma / Dream Machine models | Luma AI / USA | Video model family | I2V, T2V | Luma AI, Supermodel and supported aggregators | Commercial model family. |
-> | 32 | Pika models | Pika / USA | Video model family | I2V, T2V | Pika and supported aggregators | Commercial model family. |
-> | 33 | Stable Video | Stability AI / UK/global | Video model family | I2V | Hugging Face/open hosts, Supermodel and others | Open/open-weight variants may allow low-cost inference. |
-> | 34 | Sora | OpenAI / USA | Video model family | I2V, T2V | OpenAI and supported aggregators where legitimately available | Premium/commercial; verify official API availability and third-party legitimacy before production integration. |
->
-> ---
->
-> ## Capability Categories
->
-> | # | Code | Category | Meaning |
-> |---:|---|---|---|
-> | 1 | T2I | Text-to-Image | Generate a still image from a text prompt. |
-> | 2 | I2I | Image-to-Image / Image Editing | Transform, edit, restyle, extend, or condition generation on an input image. |
-> | 3 | I2V | Image-to-Video | Generate video using one or more input images/frames. |
-> | 4 | T2V | Text-to-Video | Generate video directly from a text prompt. |
-> | 5 | Render | Video / Storyboard Rendering | Assemble/render media without necessarily performing generative image/video synthesis. |
-> | 6 | Inference | General Model Inference | Host/run models through a general inference API or serverless runtime. |
->
-> ---
->
-> ## OctaScene usage intent
->
-> PMList is a **research and integration candidate registry**. OctaScene should ultimately keep providers and models in separate database tables with a many-to-many provider-model capability mapping. The product can then rank supported models by quality, speed, cost, free-tier availability, connected user providers, and shot requirements without duplicating the same model simply because multiple APIs host it.
